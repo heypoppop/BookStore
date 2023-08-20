@@ -14,12 +14,28 @@ public abstract class Item {
         Item.code++;
     }
 
-    public Item(String name, int price, String description, Integer stock) {
-        this.name = name;
-        this.price = price;
-        this.description = description;
+    public void setStock(int stock) {
         this.stock = stock;
-        Item.code++;
+    }
 
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    // 상품 정보 출력
+    public String toString() {
+        return "상품명 : " + this.name + ", 가격 : " + this.price + ", 내용 : " + this.description + ", 재고 : " + this.stock;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public int getStock() {
+        return stock;
     }
 }

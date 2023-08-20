@@ -11,9 +11,9 @@ public class Toy extends Item {
         this.barcode = "T" + code;
     }
 
-    public Toy(String name, int price, String description, Integer stock) {
-        super(name, price, description, stock);
-        this.barcode = "T" + code;
-
+    @Override
+    public void setStock(int stock) {
+        super.setStock(stock);
     }
+
 }

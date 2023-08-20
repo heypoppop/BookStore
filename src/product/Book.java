@@ -10,9 +10,9 @@ public class Book extends Item {
         this.barcode = "B" + code;
     }
 
-    public Book(String name, int price, String description, Integer stock) {
-        super(name, price, description, stock);
-        this.barcode = "B" + code;
+    @Override
+    public void setStock(int stock) {
+        super.setStock(stock);
     }
 
 }

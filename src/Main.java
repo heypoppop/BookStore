@@ -59,10 +59,7 @@ public class Main {
                     store.allItems();
                     break;
                 case 4: // TODO 4.상품 검색
-                    System.out.println("검색할 상품명을 입력해주세요.");
-                    String userStrInput = sc.nextLine();
-                    sc.nextLine();
-                    store.searchItem(userStrInput);
+                    store.searchItem();
                     break;
                 case 5: // TODO 5.상품 구매
                     System.out.println("상품을 구매합니다.");

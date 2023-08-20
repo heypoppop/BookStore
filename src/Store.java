@@ -51,12 +51,13 @@ public class Store {
         }
     }
 
-    public void searchItem(String name) {
+    public void searchItem() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("검색할 상품명을 입력해주세요.");
+        String name = sc.nextLine();
         for (Item item1 : itemArrayList) {
             if (item1.getName().equals(name)) {
                 System.out.println(item1);
-            } else {
-                System.out.println("해당 상품명은 존재하지 않는 상품명입니다.");
             }
         }
     }
@@ -74,8 +75,6 @@ public class Store {
                 item1.setStock(stock);
                 System.out.println(item1.getStock() + "개로 재고가 변경되었습니다.");
                 System.out.println("현재 상품 정보 : " + item1);
-            } else {
-                System.out.println("해당 상품명은 존재하지 않는 상품명입니다.");
             }
         }
     }
@@ -93,8 +92,6 @@ public class Store {
                 item1.setPrice(price);
                 System.out.println(item1.getPrice() + "개로 재고가 변경되었습니다.");
                 System.out.println("현재 상품 정보 : " + item1);
-            } else {
-                System.out.println("해당 상품명은 존재하지 않는 상품명입니다.");
             }
         }
     }
@@ -106,7 +103,7 @@ public class Store {
         String name = sc.nextLine();
         for (Item item1 : itemArrayList) {
             if (item1.getName().equals(name)) {
-                System.out.println("해당 상품의 가격은 " + item1.getPrice() + "원 입니다.");
+                System.out.println("해당 상품의 가격은 " + item1.getPrice() + "원, 보유재고는 "+ item1.getStock() +" 입니다.");
                 System.out.println("몇 개를 구매하시겠습니까?");
                 int itemPcs = sc.nextInt();
                 if (item1.getStock() < itemPcs) {
@@ -114,10 +111,8 @@ public class Store {
                     System.out.println("해당 상품의 보유 재고 수량이 부족합니다.");
                 } else {
                     System.out.println("구매에 성공하셨습니다.");
-                    item.setStock(item1.getStock() - itemPcs);
+                    item1.setStock((item1.getStock() - itemPcs));
                 }
-            } else {
-                System.out.println("해당 상품명은 존재하지 않는 상품명입니다.");
             }
         }
     }

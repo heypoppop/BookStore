@@ -38,4 +38,6 @@ public abstract class Item {
     public int getStock() {
         return stock;
     }
+
+    public abstract String getBarcode();
 }

@@ -53,10 +53,10 @@ public class Store {
 
     public void searchItem() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("검색할 상품명을 입력해주세요.");
+        System.out.println("검색할 상품명 혹은 바코드를 입력해주세요.");
         String name = sc.nextLine();
         for (Item item1 : itemArrayList) {
-            if (item1.getName().equals(name)) {
+            if (item1.getName().equals(name) || item1.getBarcode().equals(name)) {
                 System.out.println(item1);
             }
         }
@@ -65,10 +65,10 @@ public class Store {
     public void setStock() {
         Scanner sc = new Scanner(System.in);
         System.out.println("재고 수정 메뉴입니다.");
-        System.out.println("재고를 수정할 상품명을 입력하세요.");
+        System.out.println("재고를 수정할 상품명 혹은 바코드를 입력하세요.");
         String name = sc.nextLine();
         for (Item item1 : itemArrayList) {
-            if (item1.getName().equals(name)) {
+            if (item1.getName().equals(name) || item1.getBarcode().equals(name)) {
                 System.out.println("현재 재고는 " + item1.getStock() + "입니다.");
                 System.out.println("재고를 몇개로 수정하시겠습니까?");
                 int stock = sc.nextInt();
@@ -82,10 +82,10 @@ public class Store {
     public void setPrice() {
         Scanner sc = new Scanner(System.in);
         System.out.println("가격 수정 메뉴입니다.");
-        System.out.println("가격을 수정할 상품명을 입력하세요.");
+        System.out.println("가격을 수정할 상품명 혹은 바코드를 입력하세요.");
         String name = sc.nextLine();
         for (Item item1 : itemArrayList) {
-            if (item1.getName().equals(name)) {
+            if (item1.getName().equals(name) || item1.getBarcode().equals(name)) {
                 System.out.println("현재 가격은 " + item1.getPrice() + "입니다.");
                 System.out.println("가격을 얼마로 수정하시겠습니까?");
                 int price = sc.nextInt();
@@ -99,10 +99,10 @@ public class Store {
     public void buyItem() {
         Scanner sc = new Scanner(System.in);
         System.out.println("상품 구매 메뉴입니다.");
-        System.out.println("구매할 상품명을 입력해주세요.");
+        System.out.println("구매할 상품명 혹은 바코드를 입력해주세요.");
         String name = sc.nextLine();
         for (Item item1 : itemArrayList) {
-            if (item1.getName().equals(name)) {
+            if (item1.getName().equals(name) || item1.getBarcode().equals(name)) {
                 System.out.println("해당 상품의 가격은 " + item1.getPrice() + "원, 보유재고는 "+ item1.getStock() +" 입니다.");
                 System.out.println("몇 개를 구매하시겠습니까?");
                 int itemPcs = sc.nextInt();
@@ -118,7 +118,6 @@ public class Store {
     }
 }
 // 인터페이스란 도대체 무엇인가.
-// 상품 타입에 맞는 바코드 넘버까진 생성 되었는데, 바코드를 도대체 어떻게 가져오는가?
 // 도대체 코드가 이것이 맞는가?
 // 어떻게 해야 더 간결해질 것인가??????????????
 

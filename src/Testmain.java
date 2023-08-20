@@ -7,7 +7,8 @@ import java.util.ArrayList;
 public class Testmain {
     public static void main(String[] args) {
         Store store = new Store("찬영이네");
-        store.createItem("Book");
+        Item book1 = new Book("자바의 정석", 50000, "재밌음");
+        System.out.println(book1.getBarcode());
     }
 }
 

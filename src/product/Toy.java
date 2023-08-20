@@ -16,4 +16,13 @@ public class Toy extends Item {
         super.setStock(stock);
     }
 
+    @Override
+    public String getBarcode() {
+        return this.barcode;
+    }
+
+    @Override
+    public String toString() {
+        return "바코드 : " + this.barcode +", " + super.toString();
+    }
 }

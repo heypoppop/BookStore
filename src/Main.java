@@ -12,11 +12,11 @@ public class Main {
         // Menu
         while (true) {
             System.out.println("-------------------------------------------------");
-            System.out.println("<숫자로 메뉴 선택>\n1. 상품 등록\n2. 상품 수정\n3. Item 전체 조회\n4. 상품 검색\n5. 상품 구매\n6. 탈출하기");
+            System.out.println("<숫자로 메뉴 선택>\n1. 상품 등록\n2. 상품 수정\n3. 상품 전체 조회\n4. 상품 검색\n5. 상품 구매\n6. 탈출하기");
             System.out.println("-------------------------------------------------");
             System.out.print("선택 : ");
             int userInput = sc.nextInt();
-            if (userInput == 5) {System.out.println("안녕히 가세요!!!"); break;}
+            if (userInput == 6) {System.out.println("안녕히 가세요!!!"); break;}
             switch (userInput) {
                 case 1: // TODO 1.Item 등록
                     System.out.println("판매상품 등록 메뉴 입니다.");
@@ -33,6 +33,9 @@ public class Main {
                         case 3: // Toy 등록
                             store.createItem("Toy");
                             break;
+                        default:
+                            System.out.println("제 예상을 벗어나셨습니다.");
+                            break;
                     }
                     break;
                 case 2: // TODO 2. 상품 수정
@@ -45,6 +48,9 @@ public class Main {
                             break;
                         case 2: // 가격 수정하기
                             store.setPrice();
+                            break;
+                        default:
+                            System.out.println("이러시면 곤란합니다.");
                             break;
                     }
                     break;

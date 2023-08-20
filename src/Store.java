@@ -90,7 +90,7 @@ public class Store {
                 System.out.println("가격을 얼마로 수정하시겠습니까?");
                 int price = sc.nextInt();
                 item1.setPrice(price);
-                System.out.println(item1.getPrice() + "개로 재고가 변경되었습니다.");
+                System.out.println(item1.getPrice() + "개로 가격이 변경되었습니다.");
                 System.out.println("현재 상품 정보 : " + item1);
             }
         }
